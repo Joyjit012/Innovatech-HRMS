@@ -1,30 +1,45 @@
-document.querySelector("form").addEventListener("submit", function (e) {
+const loginForm = document.getElementById('login-form');
 
+loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("pass").value.trim();
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
 
-    // Demo Credentials
-    const validEmail = "admin@hrms.com";
-    const validPassword = "Admin@123";
-
-    if (email === "" || password === "") {
-        alert("Please fill in all fields.");
+    if (email === '' || password === '') {
+        alert('Please fill in all fields.');
         return;
     }
 
-    if (email === validEmail && password === validPassword) {
+    // Create FormData
+    const formData = new FormData();
+    formData.append('email', email);
+    formData.append('password', password);
 
-        alert("Login Successful!");
+    try {
+        // Send to PHP backend
+        const response = await fetch('auth/login.php', {
+            method: 'POST',
+            body: formData
+        });
 
-        // Redirect to Dashboard
-        window.location.href = "dashboard.html";
+        const data = await response.json();
 
-    } else {
-
-        alert("Invalid Email or Password!");
-
+        if (data.success) {
+            alert('Login Successful!');
+            
+            // Redirect based on role
+            if (data.user.role === 'admin') {
+                window.location.href = 'admindashboard.html';
+            } else {
+                window.location.href = 'employee_dashboard.html';
+            }
+        } else {
+            const errorMsg = data.errors.join('\n');
+            alert('Login failed:\n' + errorMsg);
+        }
+    } catch (error) {
+        alert('An error occurred. Please try again. Error: ' + error.message);
+        console.error('Login error:', error);
     }
-
 });

@@ -182,17 +182,22 @@
 
             <div class="form-group">
                 <label for="employee-id">Employee ID</label>
-                <input type="text" id="employee-id" placeholder="e.g. EMP12345" required>
+                <input type="text" id="employee-id" name="employee_id" placeholder="e.g. EMP12345" required>
+            </div>
+
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full_name" placeholder="e.g. John Doe" required>
             </div>
 
             <div class="form-group">
                 <label for="email">Work Email</label>
-                <input type="email" id="email" placeholder="name@company.com" required>
+                <input type="email" id="email" name="email" placeholder="name@company.com" required>
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="••••••••" required>
+                <input type="password" id="password" name="password" placeholder="••••••••" required>
                 <div class="password-rules" id="password-rules">
                     <div class="rule" id="rule-length">○ 8+ characters</div>
                     <div class="rule" id="rule-upper">○ One uppercase</div>
@@ -203,19 +208,16 @@
 
             <div class="form-group">
                 <label for="role">Role</label>
-                
-
-<!-- AFTER -->
-<select id="role" name="role" required>
-    <option value="" disabled selected>Select your role</option>
-    <option value="employee">Employee</option>
-    <option value="admin">Admin</option>
-</select>
+                <select id="role" name="role" required>
+                    <option value="" disabled selected>Select your role</option>
+                    <option value="employee">Employee</option>
+                    <option value="admin">Admin</option>
+                </select>
             </div>
 
             <button type="submit" class="btn-signup" id="submit-btn">Sign Up</button>
 
-            <p class="footer-text">Already have an account? <a href="#">Log In</a></p>
+            <p class="footer-text">Already have an account? <a href="login.html">Log In</a></p>
         </form>
 
         <!-- Verification UI -->
@@ -223,8 +225,8 @@
             <div class="verification-icon">✉️</div>
             <h2>Verify Your Email</h2>
             <p>We've sent a verification link to <strong id="display-email"></strong>.</p>
-            <p style="margin-top: 15px; font-size: 14px; color: var(--text-gray);">Please check your inbox and click the link to activate your account.</p>
-            <button class="btn-signup" style="margin-top: 25px;" onclick="location.reload()">Back to Signup</button>
+            <p> style="margin-top: 15px; font-size: 14px; color: var(--text-gray);">Please check your inbox and click the link to activate your account.</p>
+            <button>class="btn-signup" style="margin-top: 25px;" onclick="window.location.href='login.html'">Go to Login</button>
         </div>
     </div>
 
