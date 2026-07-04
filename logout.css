@@ -1,0 +1,269 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #f1f4fa;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Layout Container */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+  padding: 20px;
+}
+
+/* Header Logo */
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a253c;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: #2563eb;
+}
+
+/* Main Card */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 550px;
+  padding: 40px 50px;
+  box-shadow: 0 10px 30px rgba(160, 175, 210, 0.15);
+  display: flex;
+  flex-direction: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Success Icon Area */
+.icon-container {
+  position: relative;
+  width: 160px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.success-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #e6f7ed;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #ffffff;
+  outline: 1.5px solid #22c55e;
+}
+
+.checkmark {
+  width: 36px;
+  height: 36px;
+  stroke: #22c55e;
+  fill: none;
+}
+
+/* Floating Decorative Dots and Sparkles */
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #22c55e;
+  opacity: 0.4;
+}
+.dot-1 { width: 8px; height: 8px; top: 15px; left: 35px; }
+.dot-2 { width: 6px; height: 6px; bottom: 25px; left: 45px; }
+.dot-3 { width: 7px; height: 7px; top: 25px; right: 35px; }
+.dot-4 { width: 9px; height: 9px; bottom: 35px; right: 40px; }
+
+.sparkle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  fill: #22c55e;
+  opacity: 0.5;
+}
+.sparkle-1 { top: 35px; left: 20px; }
+.sparkle-2 { top: 50px; right: 25px; }
+
+/* Content Typography */
+.title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.brand-text {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Security Notice Box */
+.security-notice {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 35px;
+  text-align: left;
+}
+
+.shield-icon {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: #2563eb;
+}
+
+.shield-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.notice-text {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.4;
+}
+
+/* Action Buttons */
+.button-group {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.btn {
+  flex: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-primary {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border: 1px solid #1d4ed8;
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #1d4ed8;
+  border: 1.5px solid #1d4ed8;
+}
+
+.btn-secondary:hover {
+  background-color: #f8fafc;
+}
+
+/* Ambient Corner Background Blobs */
+.bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, rgba(255,255,255,0) 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.bg-top-right {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  right: -150px;
+}
+
+.bg-bottom-left {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  left: -150px;
+}
+
+/* Decorative Background Dot Grids */
+.grid-dots {
+  position: absolute;
+  width: 70px;
+  height: 110px;
+  background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.dots-top-left {
+  top: 40px;
+  left: 40px;
+}
+
+.dots-bottom-right {
+  bottom: 40px;
+  right: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .card {
+    padding: 30px 24px;
+  }
+  .button-group {
+    flex-direction: column;
+  }
+  .grid-dots {
+    display: none;
+  }
+}
