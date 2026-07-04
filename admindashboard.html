@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovatech.HRMS - Employee Dashboard</title>
+    <link rel="stylesheet" href="c/admindashboard.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>Innovatech</h2>
+            <span>.HRMS</span>
+        </div>
+
+        <ul class="menu">
+            <li><a href="#dashboard">🏠 Dashboard</a></li>
+            <li><a href="#employee">👥 Employee List</a></li>
+            <li><a href="#attendance">📅 Attendance Records</a></li>
+            <li><a href="#leave">📝 Leave Approvals</a></li>
+            <li><a href="#switch">🔄 Switch Employee</a></li>
+        </ul>
+
+        <div class="logout">
+            <a href="#">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header class="header">
+            <h1>Employee Dashboard</h1>
+            <div class="profile">
+                Welcome, Employee
+            </div>
+        </header>
+
+        <!-- Dashboard -->
+        <section id="dashboard">
+
+            <h2>Dashboard Overview</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Employee List</h3>
+                    <p>View employee information.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Attendance</h3>
+                    <p>Check attendance records.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Leave Approval</h3>
+                    <p>Track leave requests.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Switch Employee</h3>
+                    <p>Switch between employees.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Employee List -->
+
+        <section id="employee">
+
+            <h2>Employee List</h2>
+
+            <table>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>EMP101</td>
+                    <td>Rahul Das</td>
+                    <td>HR</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>EMP102</td>
+                    <td>Anjali Roy</td>
+                    <td>Finance</td>
+                    <td>Active</td>
+                </tr>
+
+                <tr>
+                    <td>EMP103</td>
+                    <td>Riya Sen</td>
+                    <td>Development</td>
+                    <td>On Leave</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- Attendance -->
+
+        <section id="attendance">
+
+            <h2>Attendance Records</h2>
+
+            <div class="info-box">
+
+                <p>Present Days : <strong>22</strong></p>
+
+                <p>Absent Days : <strong>2</strong></p>
+
+                <p>Late Entries : <strong>1</strong></p>
+
+                <p>Attendance : <strong>91%</strong></p>
+
+            </div>
+
+        </section>
+
+        <!-- Leave -->
+
+        <section id="leave">
+
+            <h2>Leave Approvals</h2>
+
+            <table>
+
+                <tr>
+                    <th>Leave Type</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>Casual Leave</td>
+                    <td>10 July</td>
+                    <td>12 July</td>
+                    <td>Approved</td>
+                </tr>
+
+                <tr>
+                    <td>Sick Leave</td>
+                    <td>20 July</td>
+                    <td>22 July</td>
+                    <td>Pending</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- Switch Employee -->
+
+        <section id="switch">
+
+            <h2>Switch Employee</h2>
+
+            <form>
+
+                <label>Select Employee</label>
+
+                <select>
+
+                    <option>Rahul Das</option>
+
+                    <option>Anjali Roy</option>
+
+                    <option>Riya Sen</option>
+
+                </select>
+
+                <button>Switch Employee</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

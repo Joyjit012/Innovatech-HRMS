@@ -1,0 +1,292 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7fc;
+    color:#333;
+}
+
+/* Container */
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    background:#0d1b42;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    position:fixed;
+    height:100vh;
+    padding:25px;
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.logo h2{
+    color:#fff;
+    font-size:28px;
+}
+
+.logo span{
+    color:#5d7cff;
+    font-size:20px;
+    font-weight:600;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin:18px 0;
+}
+
+.menu li a{
+    display:block;
+    text-decoration:none;
+    color:white;
+    padding:12px 18px;
+    border-radius:10px;
+    transition:.3s;
+    font-size:16px;
+}
+
+.menu li a:hover{
+    background:#355CFF;
+}
+
+.logout a{
+    display:block;
+    text-decoration:none;
+    color:white;
+    background:#e63946;
+    padding:12px;
+    text-align:center;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.logout a:hover{
+    background:#c1121f;
+}
+
+/* Main */
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:35px;
+}
+
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.header h1{
+    font-size:32px;
+}
+
+.profile{
+    background:#355CFF;
+    color:white;
+    padding:12px 25px;
+    border-radius:30px;
+}
+
+/* Sections */
+
+section{
+    margin-bottom:45px;
+}
+
+section h2{
+    margin-bottom:20px;
+    color:#0d1b42;
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#355CFF;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    font-size:15px;
+}
+
+/* Table */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+table th{
+    background:#355CFF;
+    color:white;
+    padding:16px;
+}
+
+table td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+table tr:hover{
+    background:#f2f6ff;
+}
+
+/* Attendance Box */
+
+.info-box{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.info-box p{
+    margin:12px 0;
+    font-size:18px;
+}
+
+/* Form */
+
+form{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    max-width:500px;
+}
+
+label{
+    display:block;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-bottom:20px;
+    outline:none;
+}
+
+button{
+    background:#355CFF;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+button:hover{
+    background:#2849d8;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.sidebar{
+    width:220px;
+}
+
+.main-content{
+    margin-left:220px;
+    width:calc(100% - 220px);
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+    flex-direction:column;
+}
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main-content{
+    margin-left:0;
+    width:100%;
+    padding:20px;
+}
+
+.header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:15px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+table{
+    display:block;
+    overflow-x:auto;
+}
+
+}
