@@ -73,7 +73,7 @@ signupForm.addEventListener('submit', async (e) => {
             signupForm.classList.add('hidden');
             verificationUi.classList.add('active');
 
-            // Optionally redirect after delay
+            // Redirect after delay
             setTimeout(() => {
                 window.location.href = 'login.html';
             }, 5000);
@@ -84,5 +84,6 @@ signupForm.addEventListener('submit', async (e) => {
         }
     } catch (error) {
         alert('An error occurred. Please try again. Error: ' + error.message);
+        console.error('Signup error:', error);
     }
 });
