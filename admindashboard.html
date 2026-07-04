@@ -3,200 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innovatech.HRMS - Employee Dashboard</title>
-    <link rel="stylesheet" href="c/admindashboard.css">
+    <title>Admin Dashboard - HRMS</title>
+    <link rel="stylesheet" href="admindashboard.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-
-<div class="container">
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-
-        <div class="logo">
-            <h2>Innovatech</h2>
-            <span>.HRMS</span>
-        </div>
-
-        <ul class="menu">
-            <li><a href="#dashboard">🏠 Dashboard</a></li>
-            <li><a href="#employee">👥 Employee List</a></li>
-            <li><a href="#attendance">📅 Attendance Records</a></li>
-            <li><a href="#leave">📝 Leave Approvals</a></li>
-            <li><a href="#switch">🔄 Switch Employee</a></li>
-        </ul>
-
-        <div class="logout">
-            <a href="#">🚪 Logout</a>
-        </div>
-
-    </aside>
-
-    <!-- Main Content -->
-    <main class="main-content">
-
-        <!-- Header -->
-        <header class="header">
-            <h1>Employee Dashboard</h1>
-            <div class="profile">
-                Welcome, Employee
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>HRMS Admin</span>
             </div>
-        </header>
-
-        <!-- Dashboard -->
-        <section id="dashboard">
-
-            <h2>Dashboard Overview</h2>
-
-            <div class="cards">
-
-                <div class="card">
-                    <h3>Employee List</h3>
-                    <p>View employee information.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Attendance</h3>
-                    <p>Check attendance records.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Leave Approval</h3>
-                    <p>Track leave requests.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Switch Employee</h3>
-                    <p>Switch between employees.</p>
-                </div>
-
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="#dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                    <li><a href="#employees"><i class="fa-solid fa-users"></i> Employee List</a></li>
+                    <li><a href="#attendance"><i class="fa-solid fa-calendar-check"></i> Attendance Records</a></li>
+                    <li><a href="#leave-approvals"><i class="fa-solid fa-envelope-circle-check"></i> Leave Approvals</a></li>
+                    <li><a href="#payroll-control"><i class="fa-solid fa-file-invoice-dollar"></i> Payroll Control</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
             </div>
+        </aside>
 
-        </section>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="welcome-text">
+                    <h1>HR Administrator Overview</h1>
+                    <p>Thursday, July 4, 2026 | System Status: <span class="text-success">Active</span></p>
+                </div>
+                <div class="user-profile-top">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search employee...">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="user-info">
+                        <img src="https://ui-avatars.com/api/?name=HR+Admin&background=1cc88a&color=fff" alt="Admin Profile">
+                        <span>Admin Officer</span>
+                    </div>
+                </div>
+            </header>
 
-        <!-- Employee List -->
+            <!-- Admin Stats Overview -->
+            <section id="dashboard" class="dashboard-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon employees"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-details">
+                            <h3>124</h3>
+                            <p>Total Employees</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon pending"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                        <div class="stat-details">
+                            <h3>8</h3>
+                            <p>Pending Approvals</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon present"><i class="fa-solid fa-user-check"></i></div>
+                        <div class="stat-details">
+                            <h3>112</h3>
+                            <p>Present Today</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon payroll"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="stat-details">
+                            <h3>$45.2k</h3>
+                            <p>Monthly Payroll</p>
+                        </div>
+                    </div>
+                </div>
 
-        <section id="employee">
+                <div class="content-grid">
+                    <!-- Employee List Quick View -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Employee Management</h2>
+                            <button class="btn btn-primary btn-sm">+ Add Employee</button>
+                        </div>
+                        <div class="card-body">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Employee</th>
+                                        <th>Role</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>EMP-001</td>
+                                        <td>Alex Smith</td>
+                                        <td>Sr. Developer</td>
+                                        <td><span class="status-badge present">Active</span></td>
+                                        <td><button class="btn-icon"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EMP-002</td>
+                                        <td>Sarah Johnson</td>
+                                        <td>Product Manager</td>
+                                        <td><span class="status-badge present">Active</span></td>
+                                        <td><button class="btn-icon"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td>EMP-003</td>
+                                        <td>Michael Chen</td>
+                                        <td>UI Designer</td>
+                                        <td><span class="status-badge leave">On Leave</span></td>
+                                        <td><button class="btn-icon"><i class="fa-solid fa-pen-to-square"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-            <h2>Employee List</h2>
+                    <!-- Recent Leave Requests -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Pending Leave Requests</h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="request-list">
+                                <li class="request-item">
+                                    <div class="req-info">
+                                        <strong>Emily Brown</strong>
+                                        <span>Sick Leave (2 days)</span>
+                                    </div>
+                                    <div class="req-actions">
+                                        <button class="btn-approve"><i class="fa-solid fa-check"></i></button>
+                                        <button class="btn-reject"><i class="fa-solid fa-xmark"></i></button>
+                                    </div>
+                                </li>
+                                <li class="request-item">
+                                    <div class="req-info">
+                                        <strong>David Wilson</strong>
+                                        <span>Paid Leave (5 days)</span>
+                                    </div>
+                                    <div class="req-actions">
+                                        <button class="btn-approve"><i class="fa-solid fa-check"></i></button>
+                                        <button class="btn-reject"><i class="fa-solid fa-xmark"></i></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-            <table>
+            <!-- Attendance Records Section -->
+            <section id="attendance" class="section-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>All Attendance Records</h2>
+                        <div class="filter-group">
+                            <input type="date" value="2026-07-04">
+                            <button class="btn btn-secondary btn-sm">Filter</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Employee ID</th>
+                                    <th>Name</th>
+                                    <th>Check In</th>
+                                    <th>Check Out</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>EMP-001</td>
+                                    <td>Alex Smith</td>
+                                    <td>09:05 AM</td>
+                                    <td>06:00 PM</td>
+                                    <td><span class="status-badge present">Present</span></td>
+                                </tr>
+                                <tr>
+                                    <td>EMP-002</td>
+                                    <td>Sarah Johnson</td>
+                                    <td>08:55 AM</td>
+                                    <td>05:30 PM</td>
+                                    <td><span class="status-badge present">Present</span></td>
+                                </tr>
+                                <tr>
+                                    <td>EMP-003</td>
+                                    <td>Michael Chen</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td><span class="status-badge leave">Leave</span></td>
+                                </tr>
+                                <tr>
+                                    <td>EMP-004</td>
+                                    <td>Jessica Lee</td>
+                                    <td>09:30 AM</td>
+                                    <td>-</td>
+                                    <td><span class="status-badge pending">Half-day</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
 
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Department</th>
-                    <th>Status</th>
-                </tr>
+            <!-- Leave Approvals Section -->
+            <section id="leave-approvals" class="section-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Leave Approval Workflow</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="approval-table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                        <th>Type</th>
+                                        <th>Range</th>
+                                        <th>Remarks</th>
+                                        <th>Decision</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Emily Brown</td>
+                                        <td>Sick Leave</td>
+                                        <td>July 05 - 06</td>
+                                        <td>Doctor appointment</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-success btn-sm">Approve</button>
+                                                <button class="btn btn-danger btn-sm">Reject</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>David Wilson</td>
+                                        <td>Paid Leave</td>
+                                        <td>Aug 10 - 15</td>
+                                        <td>Family vacation</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-success btn-sm">Approve</button>
+                                                <button class="btn btn-danger btn-sm">Reject</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-                <tr>
-                    <td>EMP101</td>
-                    <td>Rahul Das</td>
-                    <td>HR</td>
-                    <td>Active</td>
-                </tr>
-
-                <tr>
-                    <td>EMP102</td>
-                    <td>Anjali Roy</td>
-                    <td>Finance</td>
-                    <td>Active</td>
-                </tr>
-
-                <tr>
-                    <td>EMP103</td>
-                    <td>Riya Sen</td>
-                    <td>Development</td>
-                    <td>On Leave</td>
-                </tr>
-
-            </table>
-
-        </section>
-
-        <!-- Attendance -->
-
-        <section id="attendance">
-
-            <h2>Attendance Records</h2>
-
-            <div class="info-box">
-
-                <p>Present Days : <strong>22</strong></p>
-
-                <p>Absent Days : <strong>2</strong></p>
-
-                <p>Late Entries : <strong>1</strong></p>
-
-                <p>Attendance : <strong>91%</strong></p>
-
-            </div>
-
-        </section>
-
-        <!-- Leave -->
-
-        <section id="leave">
-
-            <h2>Leave Approvals</h2>
-
-            <table>
-
-                <tr>
-                    <th>Leave Type</th>
-                    <th>From</th>
-                    <th>To</th>
-                    <th>Status</th>
-                </tr>
-
-                <tr>
-                    <td>Casual Leave</td>
-                    <td>10 July</td>
-                    <td>12 July</td>
-                    <td>Approved</td>
-                </tr>
-
-                <tr>
-                    <td>Sick Leave</td>
-                    <td>20 July</td>
-                    <td>22 July</td>
-                    <td>Pending</td>
-                </tr>
-
-            </table>
-
-        </section>
-
-        <!-- Switch Employee -->
-
-        <section id="switch">
-
-            <h2>Switch Employee</h2>
-
-            <form>
-
-                <label>Select Employee</label>
-
-                <select>
-
-                    <option>Rahul Das</option>
-
-                    <option>Anjali Roy</option>
-
-                    <option>Riya Sen</option>
-
-                </select>
-
-                <button>Switch Employee</button>
-
-            </form>
-
-        </section>
-
-    </main>
-
-</div>
-
+            <!-- Payroll Control Section -->
+            <section id="payroll-control" class="section-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Admin Payroll Control</h2>
+                        <button class="btn btn-primary btn-sm">Process Monthly Payroll</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="payroll-grid">
+                            <div class="payroll-summary-card">
+                                <h4>Total Disbursement</h4>
+                                <p class="amount">$45,200.00</p>
+                                <span>For Month: June 2026</span>
+                            </div>
+                            <div class="payroll-summary-card">
+                                <h4>Pending Taxes</h4>
+                                <p class="amount text-danger">$8,450.00</p>
+                                <span>Due by: July 15</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-4">Employee Salary Structures</h3>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Employee</th>
+                                    <th>Base Salary</th>
+                                    <th>Allowances</th>
+                                    <th>Deductions</th>
+                                    <th>Net Payable</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alex Smith</td>
+                                    <td>$5,000</td>
+                                    <td>$3,500</td>
+                                    <td>$700</td>
+                                    <td>$7,800</td>
+                                    <td><button class="btn-icon"><i class="fa-solid fa-gear"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>Sarah Johnson</td>
+                                    <td>$6,000</td>
+                                    <td>$2,500</td>
+                                    <td>$800</td>
+                                    <td>$7,700</td>
+                                    <td><button class="btn-icon"><i class="fa-solid fa-gear"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
