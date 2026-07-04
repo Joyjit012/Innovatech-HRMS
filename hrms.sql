@@ -67,6 +67,35 @@ INSERT INTO `attendence` VALUES (1,'EMP001','2026-02-08','Present');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `employee_details`
+--
+
+DROP TABLE IF EXISTS `employee_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `employee_details` (
+  `employee_id` int NOT NULL AUTO_INCREMENT,
+  `phone` varchar(15) DEFAULT NULL,
+  `address` text,
+  `job_title` varchar(100) DEFAULT NULL,
+  `salary` decimal(10,2) DEFAULT NULL,
+  `documents` varchar(255) DEFAULT NULL,
+  `profile_picture` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`employee_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employee_details`
+--
+
+LOCK TABLES `employee_details` WRITE;
+/*!40000 ALTER TABLE `employee_details` DISABLE KEYS */;
+INSERT INTO `employee_details` VALUES (1,'9876567643','Baranagar','Software Engineer',50000.00,'resume.pdf','profile.jpg');
+/*!40000 ALTER TABLE `employee_details` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `employee_profile`
 --
 
@@ -154,4 +183,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-04 11:43:16
+-- Dump completed on 2026-07-04 12:37:41
