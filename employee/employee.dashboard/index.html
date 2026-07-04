@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard - HRMS</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>HRMS</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="#dashboard"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                    <li><a href="#profile"><i class="fa-solid fa-user"></i> My Profile</a></li>
+                    <li><a href="#attendance"><i class="fa-solid fa-calendar-check"></i> Attendance</a></li>
+                    <li><a href="#leave"><i class="fa-solid fa-envelope-open-text"></i> Leave Requests</a></li>
+                    <li><a href="#payroll"><i class="fa-solid fa-money-check-dollar"></i> Payroll</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="welcome-text">
+                    <h1>Welcome back, Alex!</h1>
+                    <p>Thursday, July 4, 2026</p>
+                </div>
+                <div class="user-profile-top">
+                    <div class="notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="badge">2</span>
+                    </div>
+                    <div class="user-info">
+                        <img src="https://ui-avatars.com/api/?name=Alex+Smith&background=4e73df&color=fff" alt="Profile Picture">
+                        <span>Alex Smith</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Overview -->
+            <section id="dashboard" class="dashboard-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon attendance"><i class="fa-solid fa-clock"></i></div>
+                        <div class="stat-details">
+                            <h3>98%</h3>
+                            <p>Monthly Attendance</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon leave"><i class="fa-solid fa-calendar-minus"></i></div>
+                        <div class="stat-details">
+                            <h3>12 Days</h3>
+                            <p>Remaining Leave</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon status"><i class="fa-solid fa-circle-check"></i></div>
+                        <div class="stat-details">
+                            <h3>Present</h3>
+                            <p>Today's Status</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid">
+                    <!-- Attendance Tracking -->
+                    <div class="card attendance-tracker">
+                        <div class="card-header">
+                            <h2>Attendance Tracking</h2>
+                            <button class="btn btn-primary">Check In</button>
+                        </div>
+                        <div class="card-body">
+                            <div class="check-actions">
+                                <p><strong>Last Action:</strong> Check-in at 09:05 AM</p>
+                            </div>
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Check In</th>
+                                        <th>Check Out</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>July 03, 2026</td>
+                                        <td>09:00 AM</td>
+                                        <td>06:00 PM</td>
+                                        <td><span class="status-badge present">Present</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>July 02, 2026</td>
+                                        <td>09:15 AM</td>
+                                        <td>06:30 PM</td>
+                                        <td><span class="status-badge present">Present</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>July 01, 2026</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td><span class="status-badge leave">Leave</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity / Alerts -->
+                    <div class="card recent-activity">
+                        <div class="card-header">
+                            <h2>Recent Activity</h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="activity-list">
+                                <li>
+                                    <i class="fa-solid fa-circle-check text-success"></i>
+                                    <div>
+                                        <p>Leave request for "Sick Leave" approved.</p>
+                                        <span>2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-file-invoice-dollar text-primary"></i>
+                                    <div>
+                                        <p>June Payroll statement is now available.</p>
+                                        <span>Yesterday</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-user-pen text-warning"></i>
+                                    <div>
+                                        <p>Profile picture updated successfully.</p>
+                                        <span>3 days ago</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section id="profile" class="section-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>My Profile</h2>
+                        <button class="btn btn-secondary">Edit Profile</button>
+                    </div>
+                    <div class="card-body profile-layout">
+                        <div class="profile-sidebar">
+                            <img src="https://ui-avatars.com/api/?name=Alex+Smith&size=150&background=4e73df&color=fff" alt="Profile" class="profile-img-large">
+                            <h3>Alex Smith</h3>
+                            <p>Senior Software Engineer</p>
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-group">
+                                <h4>Personal Details</h4>
+                                <div class="detail-grid">
+                                    <div><label>Employee ID:</label> EMP-2024-001</div>
+                                    <div><label>Email:</label> alex.smith@company.com</div>
+                                    <div><label>Phone:</label> +1 234 567 890</div>
+                                    <div><label>Address:</label> 123 Tech Lane, Silicon Valley, CA</div>
+                                </div>
+                            </div>
+                            <div class="detail-group">
+                                <h4>Job Details</h4>
+                                <div class="detail-grid">
+                                    <div><label>Department:</label> Engineering</div>
+                                    <div><label>Role:</label> Senior Developer</div>
+                                    <div><label>Joining Date:</label> Jan 15, 2024</div>
+                                    <div><label>Manager:</label> Sarah Johnson</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leave Request Section -->
+            <section id="leave" class="section-card">
+                <div class="content-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Apply for Leave</h2>
+                        </div>
+                        <div class="card-body">
+                            <form class="leave-form">
+                                <div class="form-group">
+                                    <label>Leave Type</label>
+                                    <select>
+                                        <option>Paid Leave</option>
+                                        <option>Sick Leave</option>
+                                        <option>Unpaid Leave</option>
+                                    </select>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Start Date</label>
+                                        <input type="date">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>End Date</label>
+                                        <input type="date">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Remarks</label>
+                                    <textarea rows="3" placeholder="Reason for leave..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Request</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Leave Status</h2>
+                        </div>
+                        <div class="card-body">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Dates</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sick Leave</td>
+                                        <td>July 01 - July 01</td>
+                                        <td><span class="status-badge present">Approved</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Paid Leave</td>
+                                        <td>Aug 10 - Aug 15</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payroll Section -->
+            <section id="payroll" class="section-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Payroll & Salary Structure</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="payroll-summary">
+                            <div class="salary-box">
+                                <p>Gross Monthly Salary</p>
+                                <h3>$8,500.00</h3>
+                            </div>
+                            <div class="salary-details-grid">
+                                <div class="salary-item"><span>Basic Pay:</span> <span>$5,000.00</span></div>
+                                <div class="salary-item"><span>HRA:</span> <span>$2,000.00</span></div>
+                                <div class="salary-item"><span>Allowances:</span> <span>$1,500.00</span></div>
+                                <div class="salary-item total"><span>Net Salary:</span> <span>$7,800.00</span></div>
+                            </div>
+                        </div>
+                        <div class="document-section">
+                            <h4>Recent Payslips</h4>
+                            <ul class="doc-list">
+                                <li><i class="fa-solid fa-file-pdf"></i> June_2026_Payslip.pdf <a href="#">Download</a></li>
+                                <li><i class="fa-solid fa-file-pdf"></i> May_2026_Payslip.pdf <a href="#">Download</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
