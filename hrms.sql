@@ -16,6 +16,108 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `activity_logs`
+--
+
+DROP TABLE IF EXISTS `activity_logs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `activity_logs` (
+  `activity_id` int NOT NULL AUTO_INCREMENT,
+  `employee_id` varchar(20) NOT NULL,
+  `activity` varchar(255) NOT NULL,
+  `activity_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`activity_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `activity_logs`
+--
+
+LOCK TABLES `activity_logs` WRITE;
+/*!40000 ALTER TABLE `activity_logs` DISABLE KEYS */;
+/*!40000 ALTER TABLE `activity_logs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `attendence`
+--
+
+DROP TABLE IF EXISTS `attendence`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `attendence` (
+  `attendence_id` int NOT NULL AUTO_INCREMENT,
+  `employee_id` varchar(20) NOT NULL,
+  `attendence_date` date NOT NULL,
+  `status` enum('Present','Absent','Leave') NOT NULL,
+  PRIMARY KEY (`attendence_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `attendence`
+--
+
+LOCK TABLES `attendence` WRITE;
+/*!40000 ALTER TABLE `attendence` DISABLE KEYS */;
+INSERT INTO `attendence` VALUES (1,'EMP001','2026-02-08','Present');
+/*!40000 ALTER TABLE `attendence` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `employee_profile`
+--
+
+DROP TABLE IF EXISTS `employee_profile`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `employee_profile` (
+  `employee_id` varchar(20) NOT NULL,
+  PRIMARY KEY (`employee_id`),
+  CONSTRAINT `employee_profile_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `users` (`employee_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employee_profile`
+--
+
+LOCK TABLES `employee_profile` WRITE;
+/*!40000 ALTER TABLE `employee_profile` DISABLE KEYS */;
+INSERT INTO `employee_profile` VALUES ('EMP001');
+/*!40000 ALTER TABLE `employee_profile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `leave_requests`
+--
+
+DROP TABLE IF EXISTS `leave_requests`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `leave_requests` (
+  `leave_id` int NOT NULL AUTO_INCREMENT,
+  `employee_id` varchar(20) NOT NULL,
+  `from_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `reason` text NOT NULL,
+  `status` enum('Pending','Approved','Rejected') DEFAULT 'Pending',
+  PRIMARY KEY (`leave_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `leave_requests`
+--
+
+LOCK TABLES `leave_requests` WRITE;
+/*!40000 ALTER TABLE `leave_requests` DISABLE KEYS */;
+/*!40000 ALTER TABLE `leave_requests` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -52,4 +154,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-07-04 10:43:53
+-- Dump completed on 2026-07-04 11:43:16
